@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo de Filmes</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container-img" id="container-img">
+    <img class="img-show" id="img-show" src="">
+  </div>
+  <div class="container-popup" id="container-popup"></div>
+    <nav>
+      <div class="navbar-centralizar"> 
+        <div class="navbar" style="justify-content: flex-start; flex-direction: column; align-items: flex-start;">
+          <button class="home" onclick="enviarConsulta(consulta)"><img src="./img/logo.png" class="logo"></button>
+        </div>
+        <div class="navbar" style="justify-content: flex-end;">
+          <button class="btn-menu" id="btn-menu"><img class="filtro" src="./img/filtro.png" id="img-btn"></button>
+          <div class="container" id="container">
+            <div class="menu" id="menu" style="height: 98%;">
+              <div class="div-menu"><button class="menu-e categoria-menu menu-genero" onclick="categoria('ctg-genero')">Gênero</button></div>
+              <div class="div-menu"><button class="menu-e categoria-menu menu-pais" onclick="categoria('ctg-pais')">País</button></div>
+              <div class="div-menu"><button class="menu-e categoria-menu menu-lancamento" onclick="categoria('ctg-lancamento')">Data de Lançamento</button></div>
+              <div class="div-menu"><button class="menu-e categoria-menu menu-classificacao" onclick="categoria('ctg-classificacao')">Classificação Indicativa</button></div>
+            </div>
+            <div class="menu menu-categoria ctg-genero" id="ctg-genero">
+                <div class="div-categoria">
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Ação%')">Ação</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Desenho Animado%')">Desenho Animado</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Aventura%')">Aventura</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Biografia%')">Biografia</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Comédia%')">Comédia</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Documentário%')">Documentário</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Drama%')">Drama</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Ficção%')">Ficção</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Histórico%')">Histórico</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Mistério%')">Mistério</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Romance%')">Romance</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Suspense%')">Suspense</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaGenero('%Terror%')">Terror</button>
+                </div>
+            </div>
+            <div class="menu menu-categoria ctg-pais" id="ctg-pais">
+                <div class="div-categoria">
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Alemanha%')">Alemanha</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Brasil%')">Brasil</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Coréia do Sul%')">Coréia do Sul</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Estados Unidos%')">Estados Unidos</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%França%')">França</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Israel%')">Israel</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Itália%')">Itália</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Líbano%')">Líbano</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Reino Unido%')">Reino Unido</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaPais('%Rússia%')">Rússia</button>
+                </div>
+            </div>
+            <div class="menu menu-categoria ctg-lancamento" id="ctg-lancamento">
+                <div class="div-categoria">
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaAno('2019', '2025')">2020 - Hoje</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaAno('2009', '2020')">2010 - 2019</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaAno('1900', '2000')">Antes de 2000</button>
+                </div>
+            </div>
+            <div class="menu menu-categoria ctg-classificacao" id="ctg-classificacao">
+                <div class="div-categoria">
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('8')">L</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('10')">10</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('12')">12</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('14')">14</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('16')">16</button>
+                  <button class="menu-e btn-categoria" onclick="escolherConsultaClassificacao('18')">18</button>
+                </div>
+            </div>
+          </div>
+          <form id="form">
+            <input type="text" id="pesquisa">
+            <button class="pesquisar" id="pesquisar" onclick="pesquisarConsulta()"><img src="./img/lupa.png" class="lupa"></button>
+          </form>
+        </div>
+        </div> 
+    </nav>
+    <main>
+        <div class="content" id="content">
+        </div>
+    </main>
+    
+    <script src="./script.js"></script>
+    <script src="https://youtube.com/iframe_api"></script>
+</body>
+</html>

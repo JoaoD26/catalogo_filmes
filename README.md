@@ -1,0 +1,2 @@
+- Mover pasta PHP para a pasta htdocs no diretório do xampp
+- Criar o banco de dados com os comandos do arquivo bd.txt
