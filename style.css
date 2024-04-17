@@ -133,7 +133,7 @@ img{
     transform: translate(-50%, -50%);
     justify-items: center;
     align-items: center;
-    padding-inline: 15px;
+    padding-inline: 10px;
 }
 .titulo{
     display: flex;
@@ -153,6 +153,7 @@ img{
 .sinopse{
     grid-column: 1 /-1;
     margin-bottom: 10px;
+    overflow: auto;
 }
 .btn-fechar{
     display: flex;
@@ -202,10 +203,9 @@ p{
     margin-block: 1%;
     font-size: small;
 }
-.p-sinopse{
+/* .p-sinopse{
     overflow: auto;
-    height: 135px;
-}
+} */
 ::-webkit-scrollbar{
     width: 10px;
 }
@@ -407,6 +407,14 @@ input:focus{
     }
 }
 
+@media only screen and (max-height: 700px){
+    .specs{
+        font-size: smaller;
+    }
+    .sinopse{
+        height: 76px;
+    }
+}
 @media only screen and (min-height: 1000px){
     .sinopse{
         height: 200px;
